@@ -133,7 +133,7 @@ exports.init = function (grunt) {
         // If there was an upload error or any status other than a 200, we
         // can assume something went wrong.
         if (err || res.statusCode !== 200) {
-          cb(makeError(MSG_ERR_UPLOAD, prettySrc, err || res.statusCode));
+          cb(makeError(MSG_ERR_UPLOAD, prettySrc, err || res.statusCode, res.body));
         }
         else {
           // Read the local file so we can get its md5 hash.
